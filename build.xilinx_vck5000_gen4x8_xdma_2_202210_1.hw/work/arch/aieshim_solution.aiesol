@@ -1,0 +1,14 @@
+{
+  "Placement": [
+    {
+      "LogicalInstance" : { "InstanceName" : "ai_engine_0", "PortName" : "S00_AXIS"},
+      "PhysicalInstance" : [{ "name" : "AIE_PL_X23Y0_AIE_PL_S_AXIS_4", "column" : 24, "channel" : 4 }],
+      "IsSoft" : true
+    },
+    {
+      "LogicalInstance" : { "InstanceName" : "ai_engine_0", "PortName" : "M00_AXIS"},
+      "PhysicalInstance" : [{ "name" : "AIE_PL_X23Y0_AIE_PL_M_AXIS_3", "column" : 24, "channel" : 3 }],
+      "IsSoft" : true
+    }
+  ]
+}

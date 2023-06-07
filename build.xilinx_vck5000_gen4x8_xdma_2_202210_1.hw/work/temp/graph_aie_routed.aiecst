@@ -1,0 +1,57 @@
+{
+  "NodeConstraints": {
+    "mygraph.filer_singal_kernal": {
+      "tile": {
+        "column": 24,
+        "row": 0,
+        "tile_type": "core"
+      },
+      "reserved_memory": {
+        "column": 24,
+        "row": 1,
+        "bankId": 0,
+        "offset": 0
+      }
+    },
+    "plio:platform.src[0]": {
+      "shim": {
+        "column": 24,
+        "channel": 4
+      }
+    },
+    "plio:platform.sink[0]": {
+      "shim": {
+        "column": 24,
+        "channel": 3
+      }
+    }
+  },
+  "PortConstraints": {
+    "mygraph.filer_singal_kernal.in[0]": {
+      "buffers": [{
+          "column": 24,
+          "row": 1,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 24,
+          "row": 1,
+          "bankId": 3,
+          "offset": 0
+        }]
+    },
+    "mygraph.filer_singal_kernal.out[0]": {
+      "buffers": [{
+          "column": 24,
+          "row": 0,
+          "bankId": 2,
+          "offset": 0
+        }, {
+          "column": 24,
+          "row": 0,
+          "bankId": 0,
+          "offset": 0
+        }]
+    }
+  }
+}

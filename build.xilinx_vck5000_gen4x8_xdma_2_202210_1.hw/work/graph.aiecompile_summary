@@ -1,0 +1,684 @@
+<ENTRY>
+{
+ "thisFile": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/graph.aiecompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604539",
+ "buildStep": {
+  "cmdId": "3558d502-7ebb-43fc-a63b-21805499e2cc",
+  "name": "aiecompiler",
+  "logFile": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/AIECompiler.log",
+  "commandLine": "/tools/Xilinx/new/Vitis/2022.2/aietools/bin/unwrapped/lnx64.o/aiecompiler -v --target=hw --stacksize=2000 -include=/tools/Xilinx/new/Vitis/2022.2/aietools/include -include=/home/siyuangao/CCF2023-NameInvalid/src -include=/home/siyuangao/CCF2023-NameInvalid/data --platform=/opt/xilinx/platforms/xilinx_vck5000_gen4x8_xdma_2_202210_1/xilinx_vck5000_gen4x8_xdma_2_202210_1.xpfm /home/siyuangao/CCF2023-NameInvalid/src/graph.cpp -workdir=work ",
+  "args": [
+   "/tools/Xilinx/new/Vitis/2022.2/aietools/bin/unwrapped/lnx64.o/aiecompiler",
+   "-v",
+   "--target=hw",
+   "--stacksize=2000",
+   "-include=/tools/Xilinx/new/Vitis/2022.2/aietools/include",
+   "-include=/home/siyuangao/CCF2023-NameInvalid/src",
+   "-include=/home/siyuangao/CCF2023-NameInvalid/data",
+   "--platform=/opt/xilinx/platforms/xilinx_vck5000_gen4x8_xdma_2_202210_1/xilinx_vck5000_gen4x8_xdma_2_202210_1.xpfm",
+   "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp",
+   "-workdir=work"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604540",
+ "status": {
+  "cmdId": "3558d502-7ebb-43fc-a63b-21805499e2cc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604540",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_UNKNOWN",
+  "target": "TT_UNKNOWN",
+  "kernels": [],
+  "toolVersion": "Vitis AI Engine Compiler Release 2022.2. SW Build 3780302 on 2023-02-21-16:27:38"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604543",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604543",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:04 2023",
+ "timestampMillis": "1686159604544",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Jun  8 01:40:10 2023",
+ "timestampMillis": "1686159610758",
+ "buildStep": {
+  "cmdId": "70f30dfd-58ac-40ae-bc47-209b7376231d",
+  "name": "aieir_be",
+  "logFile": "",
+  "commandLine": "/tools/Xilinx/new/Vitis/2022.2/aietools/bin/unwrapped/lnx64.o/aieir_be --time-passes=0 --disable-om-fifo-insertion=false --logcfg-file= --trace-plio-width=64 --aie2ipu-base-addr=1073741824 --pl-freq=0 --use-real-noc=true --enable-light-cdo=false --show-loggers=false --fast-nonlinearfloats=false --broadcast-enable-core=true --high-performance=false --multi-layer-opt=0 --kernel-address-location=false --target=hw --swfifo-threshold=40 --single-mm2s-channel=false --workdir=work --exit-after=complete --event-trace-config= --test-iterations=-1 --stacksize=2000 --known-tripcount=false --enable-core-processor-bus=false --platform=/opt/xilinx/platforms/xilinx_vck5000_gen4x8_xdma_2_202210_1/xilinx_vck5000_gen4x8_xdma_2_202210_1.xpfm --event-trace-custom-config= --disable-dma-cmd-alignment=false --enable-ecc-scrubbing=true --float-accuracy=fast --output-archive=libadf.a --write-partitioned-file=true --print-timer-multi-layer-ctrl=false --schemafile=AIEGraphSchema.json --disable-multirate=false --include=/tools/Xilinx/new/Vitis/2022.2/aietools/include --include=/home/siyuangao/CCF2023-NameInvalid/src --include=/home/siyuangao/CCF2023-NameInvalid/data --verify-switchconfig=true --device= --enable-peano-flow=false --disable-multirate-analysis=false --fastmath=false --cpp-std=-std=c++17 --max-layer-ctrl-param-size=256 --enable-mapper-hints-constraints=false --event-trace-advanced-mapping=0 --enable-reconfig=false --compute-heapsize=true --log-level=2 --aiesim-xrt-api=false --evaluate-fifo-depth=false --gen-graph-cleanup=false --use-canonical-net-names=false --event-trace-port=gmio --use-phy-shim=true --print-timer-multi-layer-core=false --xlopt=1 --graph-iterator-event=false --pre-compile-kernels=false --trace-aiesim-option=0 --aiearch=aie --mapped-soln-udm= --optimize-pktids=false --no-init=false --adf-api-log-level=2 --num-trace-streams=16 --aie-heat-map=false --enable-partition=false --phydevice= --fast-floats=true --quiet=false --enable-multi-layer=false --exec-timed=0 --pl-auto-restart=false --routed-soln-udm= --large-kernel-program=false --enable-profiling=false --runtime-opt=false --disable-transform-merge-broadcast=false --verbose=true --use-async-rtp-locks=true --repo-path= --genArchive=false --kernel-compile-replacement= --pl-axi-lite=false --event-trace-bounding-box= --multi-layer-shim-dma-bandwidth=0 --heapsize=1024 --logical-arch= --enable-reconfig-dma-autostart=false --nodot-graph=false --disable-dma-autostart=false --disable-transform-broadcast-split=true --frontend-warning=0 --frontend-critical-warning=0 -json work/temp/graph.json -sdf-graph /home/siyuangao/CCF2023-NameInvalid/src/graph.cpp ",
+  "args": [
+   "/tools/Xilinx/new/Vitis/2022.2/aietools/bin/unwrapped/lnx64.o/aieir_be",
+   "--time-passes=0",
+   "--disable-om-fifo-insertion=false",
+   "--logcfg-file=",
+   "--trace-plio-width=64",
+   "--aie2ipu-base-addr=1073741824",
+   "--pl-freq=0",
+   "--use-real-noc=true",
+   "--enable-light-cdo=false",
+   "--show-loggers=false",
+   "--fast-nonlinearfloats=false",
+   "--broadcast-enable-core=true",
+   "--high-performance=false",
+   "--multi-layer-opt=0",
+   "--kernel-address-location=false",
+   "--target=hw",
+   "--swfifo-threshold=40",
+   "--single-mm2s-channel=false",
+   "--workdir=work",
+   "--exit-after=complete",
+   "--event-trace-config=",
+   "--test-iterations=-1",
+   "--stacksize=2000",
+   "--known-tripcount=false",
+   "--enable-core-processor-bus=false",
+   "--platform=/opt/xilinx/platforms/xilinx_vck5000_gen4x8_xdma_2_202210_1/xilinx_vck5000_gen4x8_xdma_2_202210_1.xpfm",
+   "--event-trace-custom-config=",
+   "--disable-dma-cmd-alignment=false",
+   "--enable-ecc-scrubbing=true",
+   "--float-accuracy=fast",
+   "--output-archive=libadf.a",
+   "--write-partitioned-file=true",
+   "--print-timer-multi-layer-ctrl=false",
+   "--schemafile=AIEGraphSchema.json",
+   "--disable-multirate=false",
+   "--include=/tools/Xilinx/new/Vitis/2022.2/aietools/include",
+   "--include=/home/siyuangao/CCF2023-NameInvalid/src",
+   "--include=/home/siyuangao/CCF2023-NameInvalid/data",
+   "--verify-switchconfig=true",
+   "--device=",
+   "--enable-peano-flow=false",
+   "--disable-multirate-analysis=false",
+   "--fastmath=false",
+   "--cpp-std=-std=c++17",
+   "--max-layer-ctrl-param-size=256",
+   "--enable-mapper-hints-constraints=false",
+   "--event-trace-advanced-mapping=0",
+   "--enable-reconfig=false",
+   "--compute-heapsize=true",
+   "--log-level=2",
+   "--aiesim-xrt-api=false",
+   "--evaluate-fifo-depth=false",
+   "--gen-graph-cleanup=false",
+   "--use-canonical-net-names=false",
+   "--event-trace-port=gmio",
+   "--use-phy-shim=true",
+   "--print-timer-multi-layer-core=false",
+   "--xlopt=1",
+   "--graph-iterator-event=false",
+   "--pre-compile-kernels=false",
+   "--trace-aiesim-option=0",
+   "--aiearch=aie",
+   "--mapped-soln-udm=",
+   "--optimize-pktids=false",
+   "--no-init=false",
+   "--adf-api-log-level=2",
+   "--num-trace-streams=16",
+   "--aie-heat-map=false",
+   "--enable-partition=false",
+   "--phydevice=",
+   "--fast-floats=true",
+   "--quiet=false",
+   "--enable-multi-layer=false",
+   "--exec-timed=0",
+   "--pl-auto-restart=false",
+   "--routed-soln-udm=",
+   "--large-kernel-program=false",
+   "--enable-profiling=false",
+   "--runtime-opt=false",
+   "--disable-transform-merge-broadcast=false",
+   "--verbose=true",
+   "--use-async-rtp-locks=true",
+   "--repo-path=",
+   "--genArchive=false",
+   "--kernel-compile-replacement=",
+   "--pl-axi-lite=false",
+   "--event-trace-bounding-box=",
+   "--multi-layer-shim-dma-bandwidth=0",
+   "--heapsize=1024",
+   "--logical-arch=",
+   "--enable-reconfig-dma-autostart=false",
+   "--nodot-graph=false",
+   "--disable-dma-autostart=false",
+   "--disable-transform-broadcast-split=true",
+   "--frontend-warning=0",
+   "--frontend-critical-warning=0",
+   "-json",
+   "work/temp/graph.json",
+   "-sdf-graph",
+   "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  8 01:40:10 2023",
+ "timestampMillis": "1686159610759",
+ "status": {
+  "cmdId": "70f30dfd-58ac-40ae-bc47-209b7376231d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:23 2023",
+ "timestampMillis": "1686159623291",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:41 2023",
+ "timestampMillis": "1686159641944",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/debug_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DEBUG_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Jun  8 01:40:41 2023",
+ "timestampMillis": "1686159641947",
+ "buildSummary": {
+  "hardwarePlatform": "xcvc1902-vsvd1760-2MP-e-S",
+  "hardwareDsa": "VC1902",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:41 2023",
+ "timestampMillis": "1686159641948",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:51 2023",
+ "timestampMillis": "1686159651467",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/graph.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_LOGICAL_VIEW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:51 2023",
+ "timestampMillis": "1686159651668",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph_partition.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_PARTITION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:53 2023",
+ "timestampMillis": "1686159653406",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph_aie_constraints_for_placer.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_PLACER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:54 2023",
+ "timestampMillis": "1686159654442",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph_aie_mapped.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:54 2023",
+ "timestampMillis": "1686159654443",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph_mapped.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_GRAPH_MAPPED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:54 2023",
+ "timestampMillis": "1686159654698",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/graph_mapping_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:54 2023",
+ "timestampMillis": "1686159654840",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/sync_buffer_address.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SYNC_BUFFER_ADDRESS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655050",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/Interposer_analysis_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INTERPOSER_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655159",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/lock_allocation_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_LOCK_ALLOCATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655269",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/Lock_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655368",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/Stream_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_STREAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655477",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/DMA_report.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_DMA_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:55 2023",
+ "timestampMillis": "1686159655595",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/dma_lock_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_LOCK",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:40:59 2023",
+ "timestampMillis": "1686159659636",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/DMA_FIFO_info_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_DMA_FIFO",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:00 2023",
+ "timestampMillis": "1686159660395",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/router_soln.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:00 2023",
+ "timestampMillis": "1686159660501",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/router_soln.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_ROUTER_SOLUTION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:00 2023",
+ "timestampMillis": "1686159660759",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/graph_mapped_post.png",
+  "name": "",
+  "fileType": "PNG",
+  "reportType": "AIE_MAPPING_ANALYSIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:14 2023",
+ "timestampMillis": "1686159674181",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/graph.xpe",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_POWER",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:14 2023",
+ "timestampMillis": "1686159674390",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/aie/24_0/scripts/24_0.prx",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:14 2023",
+ "timestampMillis": "1686159674391",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/aie/24_0/src/24_0.cc",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_PROJECT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:41:14 2023",
+ "timestampMillis": "1686159674834",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/aie/24_0/24_0.log",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CORE_COMPILE_LOG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:43:49 2023",
+ "timestampMillis": "1686159829321",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/ps/c_rts/aie_control.cpp",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_CONTROL_SOURCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:43:57 2023",
+ "timestampMillis": "1686159837103",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/ps/c_rts/aie_control_config.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONTROL_CONFIG",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:43:57 2023",
+ "timestampMillis": "1686159837187",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/reports/compiler_report.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_COMPILER_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  8 01:43:57 2023",
+ "timestampMillis": "1686159837346",
+ "report": {
+  "path": "/home/siyuangao/CCF2023-NameInvalid/build.xilinx_vck5000_gen4x8_xdma_2_202210_1.hw/work/temp/graph_aie_constraints.aiecst",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_CONSTRAINTS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  8 01:44:06 2023",
+ "timestampMillis": "1686159846564",
+ "status": {
+  "cmdId": "70f30dfd-58ac-40ae-bc47-209b7376231d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  8 01:44:07 2023",
+ "timestampMillis": "1686159847916",
+ "status": {
+  "cmdId": "3558d502-7ebb-43fc-a63b-21805499e2cc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

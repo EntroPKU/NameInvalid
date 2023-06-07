@@ -1,0 +1,19 @@
+{
+    "KernelAnalysisSpec": {
+        "ModulePath": "/home/siyuangao/CCF2023-NameInvalid/src/aie_kernels/filter_mac.cpp",
+        "KernelSourcePath": "/home/siyuangao/CCF2023-NameInvalid/src/aie_kernels/filter_mac.cpp",
+        "SpecFile": "i0_filter_mac_spec.json",
+        "ResultFile": "i0_filter_mac_results.json",
+        "UseCases": [
+            {
+                "Index": 0,
+                "KernelFunction": "filter_mac",
+                "InitializationFunction": "",
+                "KernelClassCtor": "",
+                "Instances": [
+                    "i0"
+                ]
+            }
+        ]
+    }
+}

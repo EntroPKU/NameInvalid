@@ -1,0 +1,387 @@
+{
+    "schema": "MEGraphSchema-0.4",
+    "id": "root",
+    "blockTypes": {
+        "b1": {
+            "type": "plio",
+            "ports": {
+                "po0": {
+                    "type": "stream",
+                    "elementType": "int8",
+                    "direction": "out",
+                    "portName": "platform.src[0]"
+                }
+            }
+        },
+        "b2": {
+            "type": "plio",
+            "ports": {
+                "pi0": {
+                    "type": "stream",
+                    "elementType": "int8",
+                    "direction": "in",
+                    "portName": "platform.sink[0]"
+                }
+            }
+        },
+        "b0": {
+            "type": "function",
+            "function": "filter_mac",
+            "srcFile": "aie_kernels/filter_mac.cpp",
+            "ports": {
+                "pi0": {
+                    "type": "mem",
+                    "elementType": "int8",
+                    "direction": "in",
+                    "parameterIndex": 0,
+                    "circularBuffer": 1,
+                    "portName": "in[0]",
+                    "varName": "in",
+                    "cppDataType": "input_window<signed char> *",
+                    "hasCyclicAddressing": true,
+                    "margin": 4294967295
+                },
+                "po0": {
+                    "type": "mem",
+                    "elementType": "int8",
+                    "direction": "out",
+                    "parameterIndex": 1,
+                    "circularBuffer": 1,
+                    "portName": "out[0]",
+                    "varName": "out",
+                    "cppDataType": "output_window<signed char> *",
+                    "hasCyclicAddressing": true,
+                    "margin": 4294967295
+                }
+            }
+        },
+        "ps_b3": {
+            "type": "function",
+            "function": "ps_main",
+            "srcFile": "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp",
+            "implType": "unknown"
+        }
+    },
+    "blockInstances": {
+        "i0": {
+            "blockType": "b0",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "qualifiedGraphName": "mygraph",
+            "qualifiedName": "mygraph.filer_singal_kernal",
+            "runTime": 0.99,
+            "fabric": "me",
+            "instanceId": 0,
+            "loc": "/home/siyuangao/CCF2023-NameInvalid/src/graph.h:16:27"
+        },
+        "i1": {
+            "blockType": "b1",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "dataWidth": 32,
+            "dataFile": "data/input.txt",
+            "logicalName": "plio:platform.src[0]",
+            "plFreq": 312.5,
+            "instanceId": -1
+        },
+        "i2": {
+            "blockType": "b2",
+            "graphIds": [
+                0
+            ],
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "dataWidth": 32,
+            "dataFile": "data/output_vectorized.txt",
+            "logicalName": "plio:platform.sink[0]",
+            "plFreq": 312.5,
+            "instanceId": -1
+        },
+        "ps_i3": {
+            "blockType": "ps_b3",
+            "graphIds": [
+                -1
+            ],
+            "fabric": "fpga",
+            "plAxiLite": "useDefault",
+            "plFreq": 312.5
+        }
+    },
+    "portInstances": {
+        "i0_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "portName": "filer_singal_kernal.in[0]",
+            "qualifiedName": "mygraph.filer_singal_kernal.in[0]",
+            "instanceId": 2,
+            "blockInstance": "i0",
+            "blockSize": 6144
+        },
+        "i0_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "portName": "filer_singal_kernal.out[0]",
+            "qualifiedName": "mygraph.filer_singal_kernal.out[0]",
+            "instanceId": 3,
+            "blockInstance": "i0",
+            "blockSize": 2048
+        },
+        "i1_po0": {
+            "margin": 0,
+            "port": "po0",
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "portName": "platform.src[0]",
+            "qualifiedName": "platform.src[0]",
+            "qualifiedGraphPortAliasNames": [
+                "mygraph.in"
+            ],
+            "blockInstance": "i1"
+        },
+        "i2_pi0": {
+            "margin": 0,
+            "port": "pi0",
+            "graphName": "mygraph",
+            "graphType": "filter_graph",
+            "portName": "platform.sink[0]",
+            "qualifiedName": "platform.sink[0]",
+            "qualifiedGraphPortAliasNames": [
+                "mygraph.out"
+            ],
+            "blockInstance": "i2"
+        }
+    },
+    "nets": {
+        "net0": {
+            "srcInstance": "i1",
+            "srcPort": "i1_po0",
+            "dstInstance": "i0",
+            "dstPort": "i0_pi0",
+            "varNames": [
+                "net0",
+                "net0"
+            ],
+            "locs": [
+                "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp:9:1",
+                "/home/siyuangao/CCF2023-NameInvalid/src/graph.h:18:2"
+            ]
+        },
+        "net1": {
+            "srcInstance": "i0",
+            "srcPort": "i0_po0",
+            "dstInstance": "i2",
+            "dstPort": "i2_pi0",
+            "varNames": [
+                "net1",
+                "net1"
+            ],
+            "locs": [
+                "/home/siyuangao/CCF2023-NameInvalid/src/graph.h:19:5",
+                "/home/siyuangao/CCF2023-NameInvalid/src/graph.cpp:10:1"
+            ]
+        }
+    },
+    "debugInfo": {
+        "i0": {
+            "varName": "filer_singal_kernal"
+        },
+        "i1": {
+            "varName": ""
+        },
+        "i2": {
+            "varName": ""
+        },
+        "ps_i3": {
+            "varName": ""
+        },
+        "i0_pi0": {
+            "varName": "filer_singal_kernal.in[0]"
+        },
+        "i0_po0": {
+            "varName": "filer_singal_kernal.out[0]"
+        },
+        "i1_po0": {
+            "varName": "platform.src[0]"
+        },
+        "i2_pi0": {
+            "varName": "platform.sink[0]"
+        }
+    },
+    "graphFilesInfo": {
+        "headerFiles": [
+            "/home/siyuangao/CCF2023-NameInvalid/src/graph.h"
+        ]
+    },
+    "mapping": {
+        "blockInstanceMapping": {
+            "i0": {
+                "coreInfo": {
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 0,
+                    "schedule": 0
+                }
+            },
+            "i1": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "pl2aie",
+                    "channel": 4
+                }
+            },
+            "i2": {
+                "plioInfo": {
+                    "tile": "shim",
+                    "column": 24,
+                    "direction": "aie2pl",
+                    "channel": 3
+                }
+            }
+        },
+        "portInstanceMapping": {
+            "i0_pi0": {
+                "bufferInfo": [
+                    {
+                        "generatedName": "buf0",
+                        "tile": "aie",
+                        "column": 24,
+                        "row": 1,
+                        "offset": 16384,
+                        "size": 6144,
+                        "lock": [
+                            0
+                        ]
+                    },
+                    {
+                        "generatedName": "buf0d",
+                        "tile": "aie",
+                        "column": 24,
+                        "row": 1,
+                        "offset": 24576,
+                        "size": 6144,
+                        "lock": [
+                            1
+                        ]
+                    }
+                ],
+                "dmaInfo": {
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 1,
+                    "direction": "s2mm",
+                    "channel": 0,
+                    "bufferDescriptor": [
+                        0,
+                        1
+                    ]
+                }
+            },
+            "i0_po0": {
+                "bufferInfo": [
+                    {
+                        "generatedName": "buf1",
+                        "tile": "aie",
+                        "column": 24,
+                        "row": 0,
+                        "offset": 16384,
+                        "size": 2048,
+                        "lock": [
+                            0
+                        ]
+                    },
+                    {
+                        "generatedName": "buf1d",
+                        "tile": "aie",
+                        "column": 24,
+                        "row": 0,
+                        "offset": 0,
+                        "size": 2048,
+                        "lock": [
+                            1
+                        ]
+                    }
+                ],
+                "dmaInfo": {
+                    "tile": "aie",
+                    "column": 24,
+                    "row": 0,
+                    "direction": "mm2s",
+                    "channel": 0,
+                    "bufferDescriptor": [
+                        0,
+                        1
+                    ]
+                }
+            },
+            "i1_po0": {},
+            "i2_pi0": {}
+        },
+        "graphInstanceMapping": {
+            "mygraph": {
+                "graphInfo": {
+                    "core_columns": [
+                        24
+                    ],
+                    "core_rows": [
+                        0
+                    ],
+                    "iteration_memory_columns": [
+                        24
+                    ],
+                    "iteration_memory_rows": [
+                        1
+                    ],
+                    "iteration_memory_addresses": [
+                        4
+                    ],
+                    "multirate_triggers": [
+                        0
+                    ]
+                }
+            }
+        },
+        "DMAFIFO": {},
+        "systemMemory": [
+            {
+                "tile": "aie",
+                "column": 24,
+                "row": 1,
+                "offset": 0,
+                "size": 2169
+            }
+        ]
+    },
+    "scheduling": {
+        "i0": {
+            "repetition_count": 1
+        }
+    },
+    "event_trace_graph": {
+        "trace_ports": {}
+    },
+    "aie_driver_config": {
+        "hw_gen": 1,
+        "base_address": 2199023255552,
+        "npi_address": 4144627712,
+        "column_shift": 23,
+        "row_shift": 18,
+        "num_rows": 9,
+        "num_columns": 50,
+        "shim_row": 0,
+        "mem_row_start": 0,
+        "mem_num_rows": 0,
+        "aie_tile_row_start": 1,
+        "aie_tile_num_rows": 8
+    }
+}

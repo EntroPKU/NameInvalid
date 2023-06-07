@@ -1,0 +1,18 @@
+{
+    "Placement": [
+        {
+            "LogicalInstance": "plio:platform.src[0]",
+            "PhysicalInstance": [
+                "AIE_PL_X23Y0_AIE_PL_S_AXIS_4"
+            ],
+            "IsSoft": false
+        },
+        {
+            "LogicalInstance": "plio:platform.sink[0]",
+            "PhysicalInstance": [
+                "AIE_PL_X23Y0_AIE_PL_M_AXIS_3"
+            ],
+            "IsSoft": false
+        }
+    ]
+}

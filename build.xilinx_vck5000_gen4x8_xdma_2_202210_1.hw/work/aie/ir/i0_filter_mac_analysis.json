@@ -1,0 +1,987 @@
+{
+    "ModuleName": "i0_filter_mac",
+    "SourceFileName": "/home/siyuangao/CCF2023-NameInvalid/src/aie_kernels/filter_mac.cpp",
+    "StructTypes": [
+        {
+            "Name": "class.anon",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::detail::utils::unroll_context",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::detail::utils::unroll_context.9",
+            "Size": 1
+        },
+        {
+            "Name": "class.anon.10",
+            "Size": 1
+        },
+        {
+            "Name": "class.anon.15",
+            "Size": 1
+        },
+        {
+            "Name": "struct.input_window",
+            "Size": 52
+        },
+        {
+            "Name": "struct.output_window",
+            "Size": 52
+        },
+        {
+            "Name": "class.aie::detail::vector",
+            "Size": 32
+        },
+        {
+            "Name": "struct.ipd.custom_type.v32int8.v32int8",
+            "Size": 32
+        },
+        {
+            "Name": "class.aie::detail::accum",
+            "Size": 192
+        },
+        {
+            "Name": "struct.std::__2::array",
+            "Size": 192
+        },
+        {
+            "Name": "struct.ipd.custom_type.v16acc48.v16acc48",
+            "Size": 96
+        },
+        {
+            "Name": "struct.aie::unary_op",
+            "Size": 192
+        },
+        {
+            "Name": "struct.aie::unary_op_common",
+            "Size": 192
+        },
+        {
+            "Name": "class.aie::detail::vector.12",
+            "Size": 16
+        },
+        {
+            "Name": "struct.ipd.custom_type.v16int8.v16int8",
+            "Size": 16
+        },
+        {
+            "Name": "class.aie::detail::accum.8",
+            "Size": 96
+        },
+        {
+            "Name": "struct.aie::unary_op.0",
+            "Size": 32
+        },
+        {
+            "Name": "struct.aie::unary_op_common.1",
+            "Size": 32
+        },
+        {
+            "Name": "struct.aie::unary_op.2",
+            "Size": 1
+        },
+        {
+            "Name": "struct.aie::unary_op_common.3",
+            "Size": 1
+        },
+        {
+            "Name": "class.aie::detail::accum.4",
+            "Size": 192
+        },
+        {
+            "Name": "class.aie::detail::vector.5",
+            "Size": 64
+        },
+        {
+            "Name": "struct.v32int16",
+            "Size": 64
+        },
+        {
+            "Name": "struct.ipd.custom_type.v64int8.v64int8",
+            "Size": 64
+        },
+        {
+            "Name": "class.aie::detail::vector.6",
+            "Size": 32
+        },
+        {
+            "Name": "struct.v8int32",
+            "Size": 32
+        },
+        {
+            "Name": "class.anon.7",
+            "Size": 20
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint1_t.uint1_t",
+            "Size": 1
+        },
+        {
+            "Name": "class.aie::detail::vector.13",
+            "Size": 64
+        },
+        {
+            "Name": "struct.v8cint32",
+            "Size": 64
+        },
+        {
+            "Name": "class.aie::detail::vector.14",
+            "Size": 32
+        },
+        {
+            "Name": "struct.v4cint32",
+            "Size": 32
+        },
+        {
+            "Name": "struct.v2cint32",
+            "Size": 16
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint2_t.uint2_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v16acc48_ups_v2b_sw_v16int8___uchar_uint1_t_uint2_t_uint1_t_uint1_t",
+            "Size": 97
+        },
+        {
+            "Name": "class.aie::detail::vector.17",
+            "Size": 64
+        },
+        {
+            "Name": "struct.ipd.custom_type.uint3_t.uint3_t",
+            "Size": 1
+        },
+        {
+            "Name": "struct.me_primitive::chessout_v16int8_dbsrs_v16acc48___uchar_uint1_t_uint1_t_uint1_t_uint3_t_uint1_t",
+            "Size": 17
+        },
+        {
+            "Name": "vector<cint32, 8>",
+            "Size": 64
+        },
+        {
+            "Name": "vector<cint32, 4>",
+            "Size": 32
+        },
+        {
+            "Name": "vector<signed char, 16>",
+            "Size": 16
+        },
+        {
+            "Name": "vector<short, 32>",
+            "Size": 64
+        },
+        {
+            "Name": "vector<signed char, 64>",
+            "Size": 64
+        },
+        {
+            "Name": "accum<aie::detail::AccumClass::Int, 48, 16>",
+            "Size": 96
+        },
+        {
+            "Name": "accum<aie::detail::AccumClass::Int, 48, 32>",
+            "Size": 192
+        },
+        {
+            "Name": "vector<int, 8>",
+            "Size": 32
+        },
+        {
+            "Name": "accum<aie::detail::AccumClass::Int, 32, 32>",
+            "Size": 192
+        },
+        {
+            "Name": "vector<signed char, 32>",
+            "Size": 32
+        }
+    ],
+    "Globals": [
+        {
+            "Name": "__const._ZN3aie6detail13mul_bits_implILNS0_10MulMacroOpE2ELj48ELj16EsLj16EsE3runILj32EJNS0_5accumILNS0_10AccumClassE0ELj32ELj32EEEEEENS5_ILS6_0ELj48EXT_EEERKNS0_6vectorIsXT_EEEbsbDpRKT0_.mul_op",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj2ELj0ELj1EE7executeIZNS0_13mul_bits_implILNS0_10MulMacroOpE2ELj48ELj16EsLj16EsE3runILj32EJNS0_5accumILNS0_10AccumClassE0ELj32ELj32EEEEEENS9_ILSA_0ELj48EXT_EEERKNS0_6vectorIsXT_EEEbsbDpRKT0_EUlT_E_EEvOSL_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5utils17unroll_for_helperIjLj0ELj2ELj1ELj1EE7executeIZNS0_13mul_bits_implILNS0_10MulMacroOpE2ELj48ELj16EsLj16EsE3runILj32EJNS0_5accumILNS0_10AccumClassE0ELj32ELj32EEEEEENS9_ILSA_0ELj48EXT_EEERKNS0_6vectorIsXT_EEEbsbDpRKT0_EUlT_E_EEvOSL_.ctx",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "ZERO",
+            "Size": 32,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZN3aie6detail5accumILNS0_10AccumClassE0ELj32ELj32EE11from_vectorIaEEvRKNS0_6vectorIT_Lj32EEEi.fn",
+            "Size": 1,
+            "SoftFloat": false
+        },
+        {
+            "Name": "__const._ZNK3aie6detail5accumILNS0_10AccumClassE0ELj32ELj32EE9to_vectorIaEENS0_6vectorIT_Lj32EEEi.fn",
+            "Size": 1,
+            "SoftFloat": false
+        }
+    ],
+    "UsesCmathStaticVars": false,
+    "Functions": [
+        {
+            "FunctionName": "aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&& std::__2::forward<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(std::__2::remove_reference<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>::type&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for<unsigned int, 0u, 2u, 1u, aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1045,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "filter_mac(input_window<signed char>*, output_window<signed char>*)",
+            "StackSize": 9602,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>::vector()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::accum()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u> aie::zeros<signed char, 32u>()",
+            "StackSize": 308,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>& aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::operator=<signed char>(aie::detail::vector<signed char, 32u> const&)",
+            "StackSize": 1121,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u> window_readincr_v<32u, (aie_dm_resource)0, signed char>(input_window<signed char>*)",
+            "StackSize": 140,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >::type>::type aie::mac<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, aie::detail::vector<signed char, 32u>, signed char>(aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&, aie::detail::vector<signed char, 32u> const&, signed char)",
+            "StackSize": 2358,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::detail::vector<signed char, 32u>, (aie::Operation)0>::parent1() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::detail::vector<signed char, 32u>, (aie::Operation)0>::unary_op_common(aie::detail::vector<signed char, 32u>)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<short, 32u> aie::detail::vector<short, 32u>::extract<32u>(unsigned int) const",
+            "StackSize": 12,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u> aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::to_vector<signed char>(int) const",
+            "StackSize": 1677,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void window_writeincr<(aie_dm_resource)0, 32u, signed char>(output_window<signed char>*, aie::detail::vector<signed char, 32u> const&)",
+            "StackSize": 136,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>::parent1() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 32u>::undef()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_storage<(aie::detail::AccumClass)0, 48u, 32u>::undef()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u> aie::detail::zeros<signed char, 32u>()",
+            "StackSize": 276,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::from_vector<signed char>(aie::detail::vector<signed char, 32u> const&, int)",
+            "StackSize": 1113,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::window_helper<signed char, 32u, (aie_dm_resource)0>::window_readincr(input_window<signed char>*)",
+            "StackSize": 104,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> aie::op_add<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)",
+            "StackSize": 396,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>, aie::detail::vector<signed char, 32u>, signed char>(aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> const&, aie::detail::vector<signed char, 32u> const&, signed char)",
+            "StackSize": 2157,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::adf::window_helper<signed char, 32u, (aie_dm_resource)0>::window_writeincr(output_window<signed char>*, aie::detail::vector<signed char, 32u>)",
+            "StackSize": 128,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::extract<16u>(unsigned int) const",
+            "StackSize": 224,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::get_srs<signed char>()::{lambda(auto:1 const&, int)#1}::operator()<aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> >(aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> const&, int) const",
+            "StackSize": 336,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 16u>::vector(v16int8)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>& aie::detail::vector<signed char, 32u>::insert<16u>(unsigned int, aie::detail::vector<signed char, 16u> const&)",
+            "StackSize": 1316,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_sat_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "set_ups_sat_impl(uint1_t)",
+            "StackSize": 6,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<int, 8u>::undef()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0> aie::op_none<aie::detail::vector<signed char, 32u> >(aie::detail::vector<signed char, 32u> const&)",
+            "StackSize": 108,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>, aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0>, signed char>(aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> const&, aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0> const&, signed char)",
+            "StackSize": 2116,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>::unary_op_common(aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>)",
+            "StackSize": 392,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<signed char, (aie::Operation)0> aie::op_none<signed char>(signed char const&)",
+            "StackSize": 15,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::operand_base_type<aie::detail::utils::remove_all<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> >::type>::type aie::mac<aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>, aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0>, aie::unary_op<signed char, (aie::Operation)0> >(aie::unary_op<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1> const&, aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0> const&, aie::unary_op<signed char, (aie::Operation)0>)",
+            "StackSize": 2106,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_times<2u, aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1049,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0>::unary_op_common(aie::detail::vector<signed char, 32u>)",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "bool aie::detail::get_mul_sign<aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0> >(aie::unary_op<aie::detail::vector<signed char, 32u>, (aie::Operation)0>)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<signed char, (aie::Operation)0>::parent1() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "bool aie::detail::get_mul_sign<aie::unary_op<signed char, (aie::Operation)0> >(aie::unary_op<signed char, (aie::Operation)0>)",
+            "StackSize": 1,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits<(aie::detail::MulMacroOp)2, 48u, 8u, signed char, 8u, signed char>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<signed char, 32u> const&, bool, signed char const&, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)",
+            "StackSize": 1447,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::accum<48u>(aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u> const&)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op<signed char, (aie::Operation)0>::unary_op_common(signed char)",
+            "StackSize": 10,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u> aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 8u, signed char, 8u, signed char>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<signed char, 32u> const&, bool, signed char, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)",
+            "StackSize": 1433,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>::unpack() const",
+            "StackSize": 391,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short const&, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)",
+            "StackSize": 1356,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u> aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)",
+            "StackSize": 1342,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::unpack(v32int8, uint1_t)",
+            "StackSize": 97,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<short, 32u>::vector()",
+            "StackSize": 132,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "unpack(v32int8)",
+            "StackSize": 195,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<int, 8u>::vector<>(int)",
+            "StackSize": 124,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u>::accum()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v32int16()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::vector<int, 8u>::init_from_values_simple<v8int32, , int>(v8int32&, int const&)",
+            "StackSize": 112,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v8int32()",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "shft_elem(v8int32, int)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v16acc48()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 0u, 1u>::execute<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1041,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>) const",
+            "StackSize": 1021,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 1u, 1u>::execute<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 1031,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::grow_extract<16u>(unsigned int) const",
+            "StackSize": 328,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<short, 32u> aie::detail::vector<short, 32u>::grow_extract<32u>(unsigned int) const",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u>::accum(v16acc48)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u>::extract<16u>(unsigned int) const",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u>& aie::detail::accum<(aie::detail::AccumClass)0, 48u, 32u>::insert<16u, 48u>(unsigned int, aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u> const&)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}::operator()<aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u> >(aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>) const",
+            "StackSize": 1021,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void aie::detail::utils::unroll_for_helper<unsigned int, 0u, 2u, 2u, 1u>::execute<aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}>(aie::detail::mul_bits_impl<(aie::detail::MulMacroOp)2, 48u, 16u, short, 16u, short>::run<32u, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> >(aie::detail::vector<short, 32u> const&, bool, short, bool, aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u> const&)::{lambda(auto:1)#1}&&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 4u>::vector()",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u>::operator v16acc48() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<short, 32u>::operator v32int16() const",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "mac16(v16acc48, v32int16, int, unsigned int, unsigned int, v8int32, unsigned int, unsigned int, unsigned int)",
+            "StackSize": 216,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<int, 8u>::operator v8int32() const",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 0u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 64u> aie::detail::vector<signed char, 16u>::grow<64u>(unsigned int) const",
+            "StackSize": 224,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector<signed char, 64u>::cast_to<cint32>() const",
+            "StackSize": 472,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 64u> aie::detail::vector<signed char, 32u>::grow<64u>(unsigned int) const",
+            "StackSize": 240,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "std::__2::array<v16acc48, 2u>::operator[](unsigned int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::shft_nrm(int)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint2_t::uint2_t(int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<short, 32u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<int, 8u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum<(aie::detail::AccumClass)0, 48u, 16u>::accum()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "std::__2::array<v16acc48, 2u>::operator[](unsigned int) const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::accum_storage<(aie::detail::AccumClass)0, 48u, 16u>::undef()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>::operator unsigned int() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::utils::unroll_context<unsigned int, 0u, 2u, 1u>::current() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<short, 32u>::undef()",
+            "StackSize": 128,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint1_t::uint1_t(int)",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<signed char, (aie::Operation)0>::unary_op_common(signed char)",
+            "StackSize": 5,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::unary_op_common<aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>, (aie::Operation)1>::unary_op_common(aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>)",
+            "StackSize": 196,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v32int8()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<int, 8u>::vector(v8int32)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector_cast<signed char, int, 8u>(aie::detail::vector<int, 8u> const&)",
+            "StackSize": 180,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector<int, 8u>::cast_to<signed char>() const",
+            "StackSize": 144,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 32u>::type aie::detail::vector_cast_helper<signed char, 32u, v8int32 const&>(v8int32 const&)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v32int8(v8int32)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 16u> aie::detail::vector<signed char, 32u>::extract<16u>(unsigned int) const",
+            "StackSize": 872,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::accum<(aie::detail::AccumClass)0, 32u, 32u>::get_ups<signed char, 16u>()::{lambda(auto:1 const&, int)#1}::operator()<aie::detail::vector<signed char, 16u> >(aie::detail::vector<signed char, 16u> const&, int) const",
+            "StackSize": 176,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 16u>::operator v16int8() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ups(v16int8, int)",
+            "StackSize": 148,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 16u>::vector()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ext_v(v32int8, int)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "auto aie::detail::vector<signed char, 32u>::cast_to<cint32>() const",
+            "StackSize": 248,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 8u> aie::detail::vector<cint32, 4u>::grow<8u>(unsigned int) const",
+            "StackSize": 336,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 8u>::operator v8cint32() const",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "shuffle8(v8cint32, int, unsigned int)",
+            "StackSize": 136,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 8u>::vector(v8cint32)",
+            "StackSize": 68,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ext_v(v8cint32, int)",
+            "StackSize": 84,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 16u>::type aie::detail::vector_cast_helper<signed char, 16u, v2cint32>(v2cint32&&)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 16u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "uint1_t const& chess_dont_warn_dead<uint1_t>(uint1_t const&)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 16u>::undef()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 4u>::type aie::detail::vector_cast_helper<cint32, 4u, v32int8 const&>(v32int8 const&)",
+            "StackSize": 140,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 8u>::vector()",
+            "StackSize": 132,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "xset_w(int, v4cint32)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<cint32, 8u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v16int8(v2cint32)",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v16int8()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 4u>::undef()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v4cint32(v32int8)",
+            "StackSize": 104,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v4cint32()",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v4cint32::v4cint32(chessllvmInternal, v32int8)",
+            "StackSize": 40,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 8u>::undef()",
+            "StackSize": 128,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v8cint32()",
+            "StackSize": 64,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v32int8 window_readincr_v32<(aie_dm_resource)0>(input_window<signed char>*)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>::vector(v32int8)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "signed char* cyclic_add<signed char>(signed char*, int, signed char*, int)",
+            "StackSize": 16,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "bsrs(v16acc48, int)",
+            "StackSize": 228,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "upd_v(v32int8, int, v16int8)",
+            "StackSize": 52,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "select8(unsigned int, v8cint32, int, unsigned int, v8cint32, int, unsigned int)",
+            "StackSize": 212,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "ext_w(v8cint32, int)",
+            "StackSize": 100,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 32u>::type aie::detail::vector_cast_helper<signed char, 32u, v4cint32>(v4cint32&&)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "me_primitive::shft_ilv64(int)",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_sym_sat_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "get_rnd_impl()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "set_srs_sat_impl(uint1_t)",
+            "StackSize": 6,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 64u>::vector()",
+            "StackSize": 4,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "xset_v(int, v16int8)",
+            "StackSize": 20,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<cint32, 8u>::type aie::detail::vector_cast_helper<cint32, 8u, v64int8 const&>(v64int8 const&)",
+            "StackSize": 268,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "xset_w(int, v32int8)",
+            "StackSize": 36,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v32int8(v4cint32)",
+            "StackSize": 32,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector_storage<signed char, 64u>::undef()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "undef_v64int8()",
+            "StackSize": 0,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "as_v8cint32(v64int8)",
+            "StackSize": 200,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "v8cint32::v8cint32(chessllvmInternal, v64int8)",
+            "StackSize": 72,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>::operator v32int8() const",
+            "StackSize": 8,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "void window_writeincr<(aie_dm_resource)0>(output_window<signed char>*, v32int8)",
+            "StackSize": 60,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "window_incr_v32(output_window<signed char>*, int)",
+            "StackSize": 24,
+            "SoftFloat": false
+        },
+        {
+            "FunctionName": "aie::detail::vector<signed char, 32u>::to_native() const",
+            "StackSize": 4,
+            "SoftFloat": false
+        }
+    ]
+}

@@ -1,0 +1,665 @@
+{
+    "Version": 0.0,
+    "Non-Netlist Instances": [
+        "buf0",
+        "buf1",
+        "sysmem2",
+        "buf3",
+        "buf4",
+        "PT0",
+        "net0",
+        "net1",
+        "D_net0",
+        "D_net1",
+        "unconstraint_fifo0",
+        "unconstraint_fifo1"
+    ],
+    "Non-Netlist Instance Placement": [
+        {
+            "Name": "buf0",
+            "Site": "AIE_MEMGRP_X24Y1",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "buf1",
+            "Site": "AIE_MEMGRP_X24Y0",
+            "Bel": "BANK2"
+        },
+        {
+            "Name": "sysmem2",
+            "Site": "AIE_MEMGRP_X24Y1",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "buf3",
+            "Site": "AIE_MEMGRP_X24Y1",
+            "Bel": "BANK3"
+        },
+        {
+            "Name": "buf4",
+            "Site": "AIE_MEMGRP_X24Y0",
+            "Bel": "BANK0"
+        },
+        {
+            "Name": "PT0",
+            "Site": "AIE_CORE_X24Y0",
+            "Bel": "CORE"
+        }
+    ],
+    "Instance Placement": [
+        {
+            "Name": "mygraph.filer_singal_kernal",
+            "Site": "AIE_CORE_X24Y0",
+            "Bel": "CORE"
+        },
+        {
+            "Name": "plio:platform.sink[0]",
+            "Site": "AIE_PL_X23Y0",
+            "Bel": "AIE_PL_M_AXIS_3"
+        },
+        {
+            "Name": "plio:platform.src[0]",
+            "Site": "AIE_PL_X23Y0",
+            "Bel": "AIE_PL_S_AXIS_4"
+        }
+    ],
+    "InstTerm Placement": [],
+    "DMAFIFOs Placement": [],
+    "Non-Netlist Instance Links": [
+        {
+            "buf0": [
+                "plio:platform.src[0]/po0",
+                "mygraph.filer_singal_kernal/pi0"
+            ]
+        },
+        {
+            "buf1": [
+                "mygraph.filer_singal_kernal/po0",
+                "plio:platform.sink[0]/pi0"
+            ]
+        },
+        {
+            "buf3": [
+                "plio:platform.src[0]/po0",
+                "mygraph.filer_singal_kernal/pi0"
+            ]
+        },
+        {
+            "buf4": [
+                "mygraph.filer_singal_kernal/po0",
+                "plio:platform.sink[0]/pi0"
+            ]
+        },
+        {
+            "PT0": [
+                "mygraph.filer_singal_kernal"
+            ]
+        },
+        {
+            "unconstraint_fifo0": [
+                "mygraph.filer_singal_kernal/pi0"
+            ]
+        },
+        {
+            "unconstraint_fifo1": [
+                "plio:platform.sink[0]/pi0"
+            ]
+        }
+    ],
+    "Non-Netlist Instance Attrs": [
+        {
+            "Name": "buf0",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING plio:platform.src[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING plio:platform.src[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING mygraph.filer_singal_kernal/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf3"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf0"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 6144"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 6144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf0"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                }
+            ]
+        },
+        {
+            "Name": "buf1",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING mygraph.filer_singal_kernal/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING plio:platform.sink[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING plio:platform.sink[0]"
+                },
+                {
+                    "Key": "IsPing",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "pongBufferName",
+                    "Val": "STRING buf4"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf1"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2048"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2048"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf1"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                }
+            ]
+        },
+        {
+            "Name": "sysmem2",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_partition_reserved_memory",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "stackSize",
+                    "Val": "INT 2000"
+                },
+                {
+                    "Key": "heapSize",
+                    "Val": "INT 137"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING sysmem2"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2169"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2169"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                },
+                {
+                    "Key": "accessRow",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "accessCol",
+                    "Val": "INT 24"
+                }
+            ]
+        },
+        {
+            "Name": "buf3",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING plio:platform.src[0]/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING plio:platform.src[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING mygraph.filer_singal_kernal/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf0d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 6144"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 6144"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf3"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                }
+            ]
+        },
+        {
+            "Name": "buf4",
+            "attrs": [
+                {
+                    "Key": "is_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "is_port_data_memory_buffer",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "bufferType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING mygraph.filer_singal_kernal/po0"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING plio:platform.sink[0]/pi0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING plio:platform.sink[0]"
+                },
+                {
+                    "Key": "IsPong",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "name",
+                    "Val": "STRING buf1d"
+                },
+                {
+                    "Key": "fabric",
+                    "Val": "STRING me"
+                },
+                {
+                    "Key": "fullSize",
+                    "Val": "INT 2048"
+                },
+                {
+                    "Key": "size",
+                    "Val": "INT 2048"
+                },
+                {
+                    "Key": "dataSplits",
+                    "Val": "STRING_LIST buf4"
+                },
+                {
+                    "Key": "offset",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "row",
+                    "Val": "INT 0"
+                },
+                {
+                    "Key": "column",
+                    "Val": "INT 24"
+                }
+            ]
+        },
+        {
+            "Name": "PT0",
+            "attrs": [
+                {
+                    "Key": "is_partition",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "color",
+                    "Val": "STRING aquamarine"
+                },
+                {
+                    "Key": "weight",
+                    "Val": "DOUBLE 0.990000"
+                },
+                {
+                    "Key": "reservedMem",
+                    "Val": "STRING sysmem2"
+                }
+            ]
+        },
+        {
+            "Name": "net0",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING plio:platform.src[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf0"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "net1",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING plio:platform.sink[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf1"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 0"
+                }
+            ]
+        },
+        {
+            "Name": "D_net0",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING plio:platform.src[0]"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf3"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "D_net1",
+            "attrs": [
+                {
+                    "Key": "is_edge",
+                    "Val": "BOOL 1"
+                },
+                {
+                    "Key": "srcInstance",
+                    "Val": "STRING mygraph.filer_singal_kernal"
+                },
+                {
+                    "Key": "srcPort",
+                    "Val": "STRING po0"
+                },
+                {
+                    "Key": "dstInstance",
+                    "Val": "STRING plio:platform.sink[0]"
+                },
+                {
+                    "Key": "dstPort",
+                    "Val": "STRING pi0"
+                },
+                {
+                    "Key": "numLocks",
+                    "Val": "INT 1"
+                },
+                {
+                    "Key": "edgeType",
+                    "Val": "STRING mem"
+                },
+                {
+                    "Key": "dataName",
+                    "Val": "STRING buf4"
+                },
+                {
+                    "Key": "ephemeral",
+                    "Val": "BOOL 1"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo0",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        },
+        {
+            "Name": "unconstraint_fifo1",
+            "attrs": [
+                {
+                    "Key": "size",
+                    "Val": "INT -1"
+                },
+                {
+                    "Key": "record_type",
+                    "Val": "STRING unspecified_fifo"
+                }
+            ]
+        }
+    ],
+    "Netlist Element Attrs": [],
+    "Net Routing": []
+}
