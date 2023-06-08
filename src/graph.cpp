@@ -5,7 +5,7 @@
 using namespace adf;
 
 filter_graph mygraph;
-simulation::platform<1,1> platform("data/input.txt", "data/output_vectorized.txt");
+simulation::platform<1,1> platform("data/input.txt", "data/output.txt");
 connect<> net0(platform.src[0], mygraph.in);
 connect<> net1(mygraph.out, platform.sink[0]);
 
