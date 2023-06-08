@@ -17,9 +17,9 @@ using namespace std;
 int main()
 {
     srand((unsigned)time(NULL));
-    int8_t data[input_size + 32][input_size + 32] = {};
-    int8_t out[input_size + 32][input_size + 32] = {};
-    int8_t weight[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int data[input_size + 32][input_size + 32] = {};
+    int out[input_size + 32][input_size + 32] = {};
+    int weight[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     memset(data, 0x00, sizeof(data));
     memset(out, 0x00, sizeof(out));
     // Generating for Original Graph
@@ -92,9 +92,7 @@ int main()
             {
                 if (j%4 != 0)
                     Output << " ";
-                Output << int(out[i][j]);
-                if (j%4 == 3)
-                    Output << endl;
+                Output << int(out[i][j]) << endl;
             }
         }
     Output.close();

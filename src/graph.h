@@ -16,7 +16,7 @@ public:
     filer_singal_kernal = kernel::create(filter_mac);
 	
 	connect< window<INPUT_NUM * sizeof(int8)> > net0 (in, filer_singal_kernal.in[0]);
-    connect< window<OUTPUT_NUM> * sizeof(int8) > net1 (filer_singal_kernal.out[0], out);
+    connect< window<OUTPUT_NUM * sizeof(int32)> > net1 (filer_singal_kernal.out[0], out);
 
     source(filer_singal_kernal) = "aie_kernels/filter_mac.cpp";
 
