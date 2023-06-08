@@ -17,9 +17,9 @@ using namespace std;
 int main()
 {
     srand((unsigned)time(NULL));
-    int data[input_size + 32][input_size + 32] = {};
-    int out[input_size + 32][input_size + 32] = {};
-    int weight[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int8_t data[input_size + 32][input_size + 32] = {};
+    int8_t out[input_size + 32][input_size + 32] = {};
+    int8_t weight[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     memset(data, 0x00, sizeof(data));
     memset(out, 0x00, sizeof(out));
     // Generating for Original Graph
@@ -44,25 +44,28 @@ int main()
         {
             for (int j = 0; j < 32; j++)
             {
-                if (j != 0)
+                if (j%4 != 0)
                     Input << " ";
-                Input << data[i][k + j];
+                Input << int(data[i][k + j]);
+                if (j % 4 == 3)
+                    Input << endl;
             }
-            Input << endl;
             for (int j = 0; j < 32; j++)
             {
-                if (j != 0)
+                if (j%4 != 0)
                     Input << " ";
-                Input << data[i][k + j + 1];
+                Input << int(data[i][k + j + 1]);
+                if(j % 4 == 3)
+                    Input << endl;
             }
-            Input << endl;
             for (int j = 0; j < 32; j++)
             {
-                if (j != 0)
+                if (j%4 != 0)
                     Input << " ";
-                Input << data[i][k + j + 2];
+                Input << int(data[i][k + j + 2]);
+                if(j % 4 == 3)
+                    Input << endl;
             }
-            Input << endl;
         }
     Input.close();
 
@@ -87,11 +90,12 @@ int main()
         {
             for (int j = 0; j < 32; j++)
             {
-                if (j != 0)
+                if (j%4 != 0)
                     Output << " ";
-                Output << out[i][j];
+                Output << int(out[i][j]);
+                if (j%4 == 3)
+                    Output << endl;
             }
-            Output << endl;
         }
     Output.close();
     return 0;
