@@ -70,7 +70,7 @@ analyzer:
 	vitis_analyzer -report ./work/graph.aiecompile_summary ./aiesimulator_output/default.aierun_summary
 get_output:
 	cd $(BUILD_DIR); \
-	grep -v T ${SIM_OUTPUT}/data/output_vectorized.txt > ${SIM_OUTPUT}/data/output_vectorized_row.txt
+	grep -v T ${SIM_OUTPUT}/data/input.txt > ${SIM_OUTPUT}/data/output.txt
 
 x86sim:
 	cd $(BUILD_DIR); \

@@ -1,9 +1,0 @@
-
-Lock Report
-portinst: i0_pi0 idx[0] datatype:wndo<int8> mem in blocksize:6144 max_blocksize:6144 bw_utlization = 1 (variable name:  filer_singal_kernal.in[0]):
-  Lock 0 MG(24,1) bankId 2 offset 0x0 size 6144 name buf0
-  Lock 1 MG(24,1) bankId 3 offset 0x0 size 6144 name buf0d
-portinst: i0_po0 idx[1] datatype:wndo<int8> mem out blocksize:2048 max_blocksize:2048 bw_utlization = 1 (variable name:  filer_singal_kernal.out[0]):
-  Lock 0 MG(24,0) bankId 2 offset 0x0 size 2048 name buf1
-  Lock 1 MG(24,0) bankId 0 offset 0x0 size 2048 name buf1d
-
