@@ -70,7 +70,7 @@ int main()
     Input.close();
 
     // Generating for Desired Output
-    ofstream Output("output.txt");
+    ofstream Output("golden.txt");
     ofstream Outgraph("outgraph.txt");
     for (int i = 0; i < input_size - 2; i++)
     {
@@ -87,14 +87,8 @@ int main()
     Outgraph.close();
     for (int k = 0; k < input_size - 2; k += 32)
         for (int i = 0; i < input_size - 2; i++)
-        {
             for (int j = 0; j < 32; j++)
-            {
-                if (j%4 != 0)
-                    Output << " ";
-                Output << int(out[i][j]) << endl;
-            }
-        }
+                Output << int(out[i][k+j]) << endl;
     Output.close();
     return 0;
 }

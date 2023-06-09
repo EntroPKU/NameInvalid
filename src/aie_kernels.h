@@ -7,6 +7,6 @@
 #define OUTPUT_NUM 2*62*32
 
 
-void filter_mac(input_window_int8 * in, output_window_int8 * out);
+void filter_mac(input_window_int8 * in, output_window_int32 * out);
 
 #endif
